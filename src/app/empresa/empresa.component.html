@@ -41,3 +41,27 @@
       </form>
   </div>
 </div>
+<div class="row pe-3 ps-3 mb-5">
+  <div class="col m-auto">
+      <table class="table table-striped">
+          <thead>
+              <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">NAME</th>
+                  <th scope="col">ATIVO</th>
+                  <th scope="col">CATEGORIA</th>
+                  <th scope="col">CONTATO</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let empresa of empresas">
+                  <th scope="row">{{empresa.id}}</th>
+                  <td>{{empresa.name}}</td>
+                  <td>{{empresa.active}}</td>
+                  <td>{{empresa.category}}</td>
+                  <td>{{empresa.contact}}</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

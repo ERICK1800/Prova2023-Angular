@@ -27,13 +27,20 @@ export class EmpresaComponent implements OnInit{
     this.loadEmpresa();
   }
 
-  loadEmpresa(){}
+  loadEmpresa(){
+    this.empresaService.getEmpresa().subscribe(
+      {
+        next: data => this.empresas = data,
+        error: msg => console.log("Erro ao chamar o endpont " + msg)
+      });
+  }
 
   save(){
     this.empresaService.saveEmpresa(this.formGroupEmpresas.value).subscribe({
       next: data => {
         this.empresas.push(data);
         this.formGroupEmpresas.reset();
+        this.loadEmpresa();
       }
     })
   }
