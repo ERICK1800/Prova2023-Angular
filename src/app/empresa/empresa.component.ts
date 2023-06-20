@@ -45,4 +45,10 @@ export class EmpresaComponent implements OnInit{
     })
   }
 
+  remove(empresa:Empresa): void{
+    this.empresaService.delEmpresa(empresa).subscribe({
+      next: () => this.loadEmpresa()
+    })
+  }
+
 }
